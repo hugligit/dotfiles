@@ -15,7 +15,6 @@ call minpac#init()
 " Valloric/YouCompleteMe
 call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-unimpaired')
-call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-surround')
 call minpac#add('kana/vim-textobj-user')
 call minpac#add('kana/vim-textobj-entire')
@@ -36,8 +35,6 @@ call minpac#add('SirVer/ultisnips')
 call minpac#add('dahu/LearnVim')
 call minpac#add('junegunn/fzf')
 call minpac#add('chrisbra/unicode.vim')
-
-
 
 call minpac#add('marcus/vim-mustang')
 call minpac#add('chriskempson/base16-vim')

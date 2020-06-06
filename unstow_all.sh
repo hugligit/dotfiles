@@ -1,1 +1,3 @@
-stow -D -t ~/  -v *
+for d in */; do
+    stow -t ~/ -vD "$d"
+done

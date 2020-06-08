@@ -14,10 +14,10 @@ for_window [class=".*"] title_format "<b>%title</b>"
 
 # set default_border none
 # set default_floating_border none
-set default_border pixel 5
-set default_floating_border pixel 5
-set hide_borders both
-set focus_wrapping no
+set $default_border pixel 5
+set $default_floating_border pixel 5
+set $hide_borders both
+set $focus_wrapping no
 
 set $focused_border #303030
 set $focused_background #203030

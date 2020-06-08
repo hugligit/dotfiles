@@ -1,2 +1,2 @@
 #!/bin/sh
-feh  --bg-fill $HOME/Pictures/System/background.jpg 
+feh  --bg-fill '/home/marcel/Pictures/System/background.jpg' 

@@ -6,6 +6,7 @@ SPACESHIP_PROMPT_ORDER=(
   user          # Username section
   host          # Hostname section
   dir           # Current directory section
+  git           # Git section (git_branch + git_status)
   line_sep      # Line break
   jobs          # Background jobs indicator
   char          # Prompt character

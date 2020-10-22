@@ -1,0 +1,40 @@
+#!/usr/bin/python3
+import sys
+import os
+import html
+from datetime import datetime
+from subprocess import check_output
+
+try:
+    info = {}
+
+    cmus = check_output(["cmus-remote", "-Q"]).decode(sys.stdout.encoding)
+    for line in cmus.splitlines():
+        l = line.split()
+        if l[0] == "tag" or l[0] == "set":
+            info["_".join(l[:2])] = " ".join(l[2:])
+        else:
+            info[l[0]] = " ".join(l[1:])
+
+
+    filename = os.path.splitext(os.path.basename(info["file"]))[0]
+    title = info.get("tag_title",filename)
+    time = int(info["duration"]) - int(info ["position"])
+    minutes = time / 60
+    seconds = time % 60
+    repeat = info["set_repeat"]
+    set_cont = info["set_continue"]
+    shuffle = info["set_shuffle"]
+    playing = "#555555"
+    if info["status"] == "playing":
+        playing = "#aaaaaa"
+
+
+    # full_text=<span background="#00FFFF" foreground="red" size="x-large">Roses</span> and <i><span color="#EE37B8">violets</span></i>!
+    msg = '''\
+<span foreground="%s">  %s %02d:%02d  </span>\
+'''
+    print(msg % (playing, html.escape(title), minutes, seconds))
+
+except Exception as a:
+    print (a)

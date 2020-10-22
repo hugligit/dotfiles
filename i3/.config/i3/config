@@ -24,6 +24,7 @@ set $focused_background #203030
 set $focused_text #dadada
 set $focused_indicator #808080
 set $focused_child_border #303030
+# set $focused_child_border #ff0000
 
 set $unfocused_border #1c1c1c
 set $unfocused_background #121212
@@ -53,7 +54,7 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 bindsym $mod+Shift+q kill
-bindsym $mod+s split h
+# bindsym $mod+s split h
 bindsym $mod+g split v
 bindsym Mod1+space fullscreen toggle
 # bindsym $mod+s layout stacking
@@ -64,16 +65,16 @@ bindsym $mod+t focus mode_toggle
 bindsym $mod+apostrophe focus parent
 bindsym $mod+backslash focus child
 
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace 1,   exec --no-startup-id ~/System/dotfiles/i3/.config/i3/change_background.sh
+bindsym $mod+2 workspace 2,   exec --no-startup-id ~/System/dotfiles/i3/.config/i3/change_background.sh
+bindsym $mod+3 workspace 3,   exec --no-startup-id ~/System/dotfiles/i3/.config/i3/change_background.sh
+bindsym $mod+4 workspace 4,   exec --no-startup-id ~/System/dotfiles/i3/.config/i3/change_background.sh
+bindsym $mod+5 workspace 5,   exec --no-startup-id ~/System/dotfiles/i3/.config/i3/change_background.sh
+bindsym $mod+6 workspace 6,   exec --no-startup-id ~/System/dotfiles/i3/.config/i3/change_background.sh
+bindsym $mod+7 workspace 7,   exec --no-startup-id ~/System/dotfiles/i3/.config/i3/change_background.sh
+bindsym $mod+8 workspace 8,   exec --no-startup-id ~/System/dotfiles/i3/.config/i3/change_background.sh
+bindsym $mod+9 workspace 9,   exec --no-startup-id ~/System/dotfiles/i3/.config/i3/change_background.sh
+bindsym $mod+0 workspace 10,  exec --no-startup-id ~/System/dotfiles/i3/.config/i3/change_background.sh
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
@@ -92,19 +93,31 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
+# bindsym $mod+q exec i3-input -F 'mark %s' -l 1 -P 'Mark: '
+bindsym $mod+q exec  --no-startup-id ~/System/dotfiles/i3/.config/i3/move_to.sh
+bindsym $mod+y bar hidden_state toggle, bar mode toggle
 
 bindsym $mod+Return    exec i3-sensible-terminal
 bindsym $mod+space     exec rofi -show drun
 bindsym $mod+slash     exec rofi -show window
 bindsym $mod+semicolon exec rofi -show run
 
-for_window [instance="audio"] floating enable
-# for_window [instance="audio"] resize 1920 1084
-for_window [instance="audio"] resize set 1920 1080
+# bindsym $mod+a [instance="audio"] scratchpad show; [instance="audio"] move position center
+bindsym $mod+a [instance="audio"] scratchpad show; [instance="audio"] move position center; [instance="audio"] fullscreen enable
+# for_window [instance="audio"] floating enable
 for_window [instance="audio"] move scratchpad
 for_window [instance="audio"] border pixel 0
-# exec --no-startup-id urxvt term -name audio -e ~/bin/tmux-music.sh
-bindsym $mod+a [instance="audio"] scratchpad show; [instance="audio"] move position center
+exec --no-startup-id urxvt -name "audio" -e   ~/System/bin/tmux-music.sh
+# exec --no-startup-id i3-sensible-terminal -c "audio" -e   ~/System/bin/tmux-music.sh
+# exec --no-startup-id terminator -c audio -e ~/bin/tmux-music.sh
+
+
+bindsym $mod+w [instance="Mail"] scratchpad show; [instance="Mail"] move position center; [instance="Mail"] fullscreen enable
+# for_window [instance="Mail"] floating enable
+# for_window [instance="Mail"] resize set 1920 1080
+for_window [instance="Mail"] move scratchpad
+for_window [instance="Mail"] border pixel 0
+
 
 # mode "launch" 
 
@@ -134,19 +147,38 @@ mode "digraphs" {
         bindsym Escape mode "default"
 }
 
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Pause mode "$mode_system"
+
 bar {
-        # status_command i3status
         status_command i3blocks
+        mode dock # bar show/hide somehow doesn't work correctly without this
+        hidden_state show # bar show/hide somehow doesn't work correctly without this
         position top
-        tray_padding 12
+        tray_output none
+        tray_padding 0
+        font pango:DejaVuSansMono Nerd Font Mono 14
         bindsym button1 nop
         bindsym button4 nop
         bindsym button5 nop
 
     colors {
-        background #000000
-        statusline #ffffff
-        separator #666666
+        # background #222222
+        statusline #aaaaaa
+        separator #333333
 
         focused_workspace  #4c7899 #285577 #ffffff
         active_workspace   #333333 #5f676a #ffffff

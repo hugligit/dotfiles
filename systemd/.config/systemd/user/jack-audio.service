@@ -1,0 +1,12 @@
+[Unit]
+Description=JACK server with PulseAudio and ALSA MIDI bridge
+After=default.target
+
+[Service]
+Type=simple
+ExecStart=%h/bin/start-jack-audio.sh
+ExecStop=%h/bin/stop-jack-audio.sh
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

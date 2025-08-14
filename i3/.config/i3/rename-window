@@ -1,0 +1,49 @@
+##!/usr/bin/env bash
+
+## Temporary storage for original titles
+#STORE="$HOME/.cache/i3-window-titles"
+#mkdir -p "$STORE"
+
+## Get window ID
+#win_id=$(xdotool getactivewindow)
+#store_file="$STORE/$win_id"
+
+## Ask for new title
+#newname=$(rofi -dmenu -p "New window name (blank to revert)")
+
+#if [ -n "$newname" ]; then
+#    # Save original title if not already stored
+#    if [ ! -f "$store_file" ]; then
+#        original_title=$(xprop -id "$win_id" WM_NAME | cut -d '"' -f 2)
+#        echo "$original_title" > "$store_file"
+#    fi
+#    i3-msg title_format "$newname" >/dev/null
+#else
+#    # Blank input: revert if we have a stored title
+#    if [ -f "$store_file" ]; then
+#        orig=$(cat "$store_file")
+#        i3-msg title_format "%title" >/dev/null
+#        rm "$store_file"
+#    fi
+#fi
+
+
+
+#!/usr/bin/env bash
+# newname=$(rofi -dmenu -p "New window name")
+# [ -n "$newname" ] && i3-msg title_format "$newname"
+
+
+
+
+
+#!/bin/bash
+
+# Prompt for a new window title
+new_title=$(rofi -dmenu -p "Rename window:")
+
+if [ -n "$new_title" ]; then
+    wmctrl -r :ACTIVE: -T "$new_title"
+	[ -n "$new_title" ] && i3-msg title_format "$new_titlenewname"
+fi
+

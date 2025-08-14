@@ -1,0 +1,20 @@
+[global_config]
+  new_tab_after_current_tab = True
+[keybindings]
+  zoom_in = <Primary>equal
+[profiles]
+  [[default]]
+    icon_bell = False
+    font = DroidSansMono Nerd Font 14
+    show_titlebar = False
+    scrollbar_position = hidden
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]

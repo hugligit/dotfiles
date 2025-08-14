@@ -1,0 +1,191 @@
+# 
+#       ____ __  __ _   _ ____  
+#      / ___|  \/  | | | / ___| 
+#     | |   | |\/| | | | \___ \ 
+#     | |___| |  | | |_| |___) |
+#      \____|_|  |_|\___/|____/ 
+#                               
+#       ____ ___  _   _ _____ ___ ____ _   _ ____      _  _____ ___ ___  _   _ 
+#      / ___/ _ \| \ | |  ___|_ _/ ___| | | |  _ \    / \|_   _|_ _/ _ \| \ | |
+#     | |  | | | |  \| | |_   | | |  _| | | | |_) |  / _ \ | |  | | | | |  \| |
+#     | |__| |_| | |\  |  _|  | | |_| | |_| |  _ <  / ___ \| |  | | |_| | |\  |
+#      \____\___/|_| \_|_|   |___\____|\___/|_| \_\/_/   \_\_| |___\___/|_| \_|
+#                                                                              
+#
+#
+#
+# call tcomment#DefineType('cmusrc', '# %s')
+
+# Display {{{
+# shell ~/.cmus/colour.sh
+set lib_sort=albumartist date album discnumber tracknumber title filename
+set pl_sort=
+set display_artist_sort_name=false
+set smart_artist_sort=true
+set format_current=   %t%= %y %d  
+set altformat_current= %F 
+set format_playlist=  %t  %=%-2c  %-15a %-20l  %-4y  %d  
+set altformat_playlist= %f%= %d 
+set format_title=%a - %l - %t (%y)
+set altformat_title=%f
+set format_trackwin=%3n %t%=[%-2c] %y %d 
+set altformat_trackwin= %f%= %d 
+set show_remaining_time=true
+set id3_default_charset=ISO-8859-1
+set show_hidden=false
+# }}}
+
+# Output {{{
+# shell ~/.cmus/output.sh
+# set output_plugin=pulse
+set output_plugin=alsa
+
+set softvol=true
+set softvol_state=85 85
+set replaygain=track
+set replaygain_limit=true
+set replaygain_preamp=6.000000
+set buffer_seconds=10
+# }}}
+
+# Playback {{{
+set shuffle=false
+set set_term_title=true
+set repeat=true
+set repeat_current=false
+set play_library=false
+set play_sorted=false
+set continue=true
+set aaa_mode=artist
+
+# set passwd=hugli6382
+# }}}
+
+# # Other {{{
+# set confirm_run=true
+# # set passwd=
+# # shell ~/.cmus/set_status_display_program.sh
+# # }}}
+
+# Keybinding {{{
+# Bad Habits {{{
+unbind -f common delete
+unbind -f common down
+unbind -f common end
+unbind -f common home
+unbind -f common left
+unbind -f common page_down
+unbind -f common page_up
+unbind -f common right
+unbind -f common up
+
+unbind -f common ^B
+unbind -f common ^F
+unbind -f common D
+# }}}
+# UI Navigation {{{
+bind -f common g win-top
+bind -f common G win-bottom
+bind -f common j win-down
+bind -f common k win-up
+bind -f common enter win-activate
+bind -f common space win-toggle
+bind -f common tab win-next
+bind -f common n search-next
+bind -f common N search-prev
+bind -f common 1 view tree
+bind -f common 2 view sorted
+bind -f common 3 view playlist
+bind -f common 4 view queue
+bind -f common 5 view browser
+bind -f common 6 view filters
+bind -f common 7 view settings
+bind -f common ^C echo Type :quit<enter> to exit cmus.
+bind -f common q quit -i
+bind -f common ^U win-page-up
+bind -f common ^D win-page-down
+bind -f common ^L refresh
+bind -f browser backspace browser-up
+bind -f browser i toggle show_hidden
+bind -f browser space win-activate
+bind -f browser u win-update
+# }}}
+# Volume Control {{{
+bind -f common + vol +1%
+bind -f common = vol +1%
+bind -f common - vol -1%
+bind -f common [ vol +1% +0
+bind -f common { vol -1% -0
+bind -f common ] vol +0 +1%
+bind -f common } vol -0 -1%
+# }}}
+# Playlist & Library {{{
+bind -f common E win-add-Q
+bind -f common e win-add-q
+bind -f common a win-add-l
+bind -f common y win-add-p
+bind -f playlist y win-remove
+bind -f queue y win-remove
+bind -f library M-D win-remove
+bind -f common p win-mv-after
+bind -f common P win-mv-before
+bind -f common u update-cache
+bind -f common F push filter 
+bind -f common i win-sel-cur
+bind -f common I echo {}
+bind -f playlist M-u unmark
+bind -f queue M-u unmark
+bind -f playlist M-a mark
+bind -f queue M-a mark
+bind -f playlist M-i invert
+bind -f queue M-i invert
+bind -f playlist M-m push mark ~
+bind -f queue M-m push mark ~
+bind -f common M-1 run id3v2 -c 1
+bind -f common M-2 run id3v2 -c 2
+bind -f common M-3 run id3v2 -c 3
+bind -f common M-4 run id3v2 -c 4
+bind -f common M-5 run id3v2 -c 5
+# }}}
+# Playback {{{
+bind -f common ^R toggle repeat_current
+bind -f common C toggle continue
+bind -f common M toggle play_library
+bind -f common m toggle aaa_mode
+bind -f common o toggle play_sorted
+bind -f common r toggle repeat
+bind -f common s toggle shuffle
+bind -f common t toggle show_remaining_time
+bind -f common , seek -15
+bind -f common . seek +15
+bind -f common b player-next
+bind -f common c player-pause
+bind -f common h seek -1
+bind -f common l seek +1
+bind -f common v player-stop
+bind -f common x player-play
+bind -f common z player-prev
+# }}}
+# }}}
+
+# # Filters {{{
+# fset 90s=date>=1990&date<2000
+# fset classical=genre="Classical"
+# fset missing-tag=!stream&(artist=""|album=""|title=""|tracknumber=-1|date=-1)
+# fset mp3=filename="*.mp3"
+# fset ogg=filename="*.ogg"
+# fset ogg-or-mp3=ogg|mp3
+# fset 1=comment="1"
+# fset 2=comment="2"
+# fset 3=comment="3"
+# fset 4=comment="4"
+# fset 5=comment="5"
+# factivate
+# # }}}
+
+cd ~/Music
+# view playlist
+colorscheme marcel
+
+
+# vim:foldmethod=marker

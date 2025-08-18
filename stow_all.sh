@@ -1,3 +1,3 @@
 for d in */; do
-    stow -t ~/ -v "$d"
+    stow -t ~/ -v --no-folding  "$d"
 done

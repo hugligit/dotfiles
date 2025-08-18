@@ -115,3 +115,5 @@ alias groot='cd $(git rev-parse --show-toplevel)'
 git config --global alias.root 'rev-parse --show-toplevel'
 export PATH=$PATH:$HOME/bin:$HOME/.local/bin
 export CDPATH=$CDPATH:/home/marcel/Documents/Projects
+fpath=(~/.oh-my-zsh/completions $fpath)
+autoload -Uz compinit && compinit

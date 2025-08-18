@@ -62,8 +62,8 @@
   Mod4 + b
 
 
-# lock screen
-"i3lock -c 000000" 
+# blank screen
+"sleep 0.25; xset dpms force off" 
   Mod4 + period
 
 # turn screen off

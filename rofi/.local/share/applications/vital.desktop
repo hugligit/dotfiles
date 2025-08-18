@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Vital
+Comment=FM Synthesizer
+Exec=/home/marcel/System/Vital
+Icon=audio-x-generic
+Terminal=false
+Type=Application
+Categories=Utility;
+

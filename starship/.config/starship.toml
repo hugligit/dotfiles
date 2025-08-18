@@ -2,8 +2,9 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # Inserts a blank line between shell prompts
-# format = "$directory $git_branch $git_status $character"
-format = "$directory $character"
+format = "$directory$git_branch$git_status$python$character "
+# format = "$directory $character"
+# format = "$directory $character $git_branch $git_commit $git_state $git_metrics $git_status"
 add_newline = false
 # add_newline = true
 
@@ -21,3 +22,15 @@ disabled = true
 [directory]
 truncation_length = 3
 style = "white"
+
+[python]
+# Show Python version and virtual environment info
+# format = "$symbol$version$virtualenv "
+format = "$symbol$virtualenv "
+symbol = " "
+# detect_virtualenvs = true
+
+# [python.virtualenv]
+# format = "(${name})"
+# style = "yellow"
+

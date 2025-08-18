@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Reaper
+Comment=FM Synthesizer
+Exec= /home/marcel/Downloads/reaper_linux_x86_64/REAPER/reaper
+Icon=audio-x-generic
+Terminal=false
+Type=Application
+Categories=Utility;
+

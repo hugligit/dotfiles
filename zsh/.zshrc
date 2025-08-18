@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git vi-mode colorize colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,3 +106,12 @@ source $ZSH/oh-my-zsh.sh
 
 
 eval "$(starship init zsh)"
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '\C-x\Ce' edit-command-line
+
+alias groot='cd $(git rev-parse --show-toplevel)'
+git config --global alias.root 'rev-parse --show-toplevel'
+export PATH=$PATH:$HOME/bin:$HOME/.local/bin
+export CDPATH=$CDPATH:/home/marcel/Documents/Projects

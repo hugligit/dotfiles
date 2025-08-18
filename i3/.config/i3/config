@@ -99,10 +99,16 @@ bindsym $mod+y bar hidden_state toggle, bar mode toggle
 
 exec --no-startup-id export PATH=$HOME/bin:$PATH
 bindsym $mod+Return    exec i3-sensible-terminal
+bindsym $mod+e   exec thunar
 bindsym $mod+space     exec rofi -show drun -show-icons
 # bindsym $mod+slash     exec rofi -show window -window-format {w:5}{t} -window-hide-active-window true -show-icons -theme /usr/share/rofi/themes/android_notification.rasi -close-on-delete false
 bindsym Mod1+Tab     exec rofi -show window -window-format {w:5}{t} -window-hide-active-window true -show-icons -theme /usr/share/rofi/themes/android_notification.rasi -close-on-delete false
 bindsym $mod+semicolon exec rofi -show run 
+bindsym $mod+comma exec ~/bin/blank_screen.sh
+bindsym $mod+grave exec ~/bin/rofi-menu.sh
+
+
+
 
 # bindsym $mod+a [instance="Hugli"] scratchpad show; [instance="Hugli"] move position center; [instance="Hugli"] fullscreen enable
 # for_window [instance="audio"] move scratchpad
@@ -222,4 +228,6 @@ bar {
 #         inactive_workspace #333333 #222222 #888888
 #         urgent_workspace   #2f343a #900000 #ffffff
 #     }
-# }
+# 
+# exec --no-startup-id xfdesktop
+

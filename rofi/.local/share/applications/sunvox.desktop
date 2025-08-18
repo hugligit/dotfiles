@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Sunvox
+Comment=Tracker
+Exec=/home/marcel/System/sunvox/sunvox/linux_x86_64/sunvox
+Icon=AudioVideo;Music;Synth
+Terminal=false
+Type=Application
+Categories=Utility;
+StartupNotify=true

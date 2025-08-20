@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=HxMID
+Comment=MIDI interface configuration
+Exec= /home/marcel/System/applications/HxMIDI
+Icon=Music;Synth
+Terminal=false
+Type=Application
+Categories=Utility;
+StartupNotify=true

@@ -23,4 +23,116 @@
 	<patterns>*</patterns>
 	<directories/>
 </action>
+<action>
+	<icon>blueman-trusted-emblem</icon>
+	<name>hl undo</name>
+	<submenu></submenu>
+	<unique-id>1755680799021063-1</unique-id>
+	<command>/home/marcel/bin/thunar-highlight.py 0 %F </command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>blueman-trusted-emblem</icon>
+	<name>hl 1</name>
+	<submenu></submenu>
+	<unique-id>1755673403467522-1</unique-id>
+	<command>/home/marcel/bin/thunar-highlight.py 1 %F</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>blueman-trusted-emblem</icon>
+	<name>hl 2</name>
+	<submenu></submenu>
+	<unique-id>1755683948499353-2</unique-id>
+	<command>/home/marcel/bin/thunar-highlight.py 2 %F</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>blueman-trusted-emblem</icon>
+	<name>hl 3</name>
+	<submenu></submenu>
+	<unique-id>1755683965646793-3</unique-id>
+	<command>/home/marcel/bin/thunar-highlight.py 3 %F</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>blueman-trusted-emblem</icon>
+	<name>hl 4</name>
+	<submenu></submenu>
+	<unique-id>1755683971548498-4</unique-id>
+	<command>/home/marcel/bin/thunar-highlight.py 4 %F</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>blueman-trusted-emblem</icon>
+	<name>hl 5</name>
+	<submenu></submenu>
+	<unique-id>1755683987050102-5</unique-id>
+	<command>/home/marcel/bin/thunar-highlight.py 5 %F</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>blueman-trusted-emblem</icon>
+	<name>hl 6</name>
+	<submenu></submenu>
+	<unique-id>1755683994439702-6</unique-id>
+	<command>/home/marcel/bin/thunar-highlight.py 6 %F</command>
+	<description></description>
+	<range>*</range>
+	<patterns>*</patterns>
+	<directories/>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
 </actions>

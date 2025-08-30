@@ -5,6 +5,7 @@ options="\
 Lock Screen\n\
 Change Background\n\
 \n\
+Reboot\n\
 Sleep\n\
 Sleep & Lock\n\
 Shutdown"
@@ -18,6 +19,9 @@ case "$chosen" in
         ;;
     "Change Background")
         ~/System/scripts/change_background.sh
+        ;;
+    "Reboot")
+        systemctl reboot
         ;;
     "Sleep")
         systemctl suspend

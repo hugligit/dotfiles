@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Vital
 Comment=FM Synthesizer
-Exec=/home/marcel/System/Vital
+Exec=/home/marcel/System/applications/Vital
 Icon=audio-x-generic
 Terminal=false
 Type=Application

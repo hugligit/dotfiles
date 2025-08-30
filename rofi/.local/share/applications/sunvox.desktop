@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Sunvox
 Comment=Tracker
-Exec=/home/marcel/System/sunvox/sunvox/linux_x86_64/sunvox
+Exec=/home/marcel/System/applications/sunvox/sunvox/linux_x86_64/sunvox
 Icon=AudioVideo;Music;Synth
 Terminal=false
 Type=Application

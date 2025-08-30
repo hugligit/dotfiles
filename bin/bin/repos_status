@@ -1,0 +1,22 @@
+#!/bin/bash
+repos=(
+  "$HOME/Projects/Documentation/cooking/"
+  "$HOME/Projects/Documentation/installations/"
+  "$HOME/Projects/Documentation/launchpad/"
+  "$HOME/Projects/Documentation/miniprojects/"
+  "$HOME/Projects/Documentation/presentations/"
+  "$HOME/Projects/Documentation/school/"
+  "$HOME/System/dotfiles/"
+  "$HOME/System/assets/"
+)
+
+for repo in "${repos[@]}"; do
+  echo "=== $repo ==="
+  if [ -d "$repo/.git" ]; then
+    (cd "$repo" && git status --short)
+  else
+    echo "Not a Git repo"
+  fi
+  echo
+done
+

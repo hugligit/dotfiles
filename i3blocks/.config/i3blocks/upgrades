@@ -1,0 +1,12 @@
+#!/bin/sh
+
+UPDATES=$(apt list --upgradable 2>/dev/null | grep -c upgradable)
+
+if [ "$UPDATES" -gt 0 ]; then
+    # Print number in red
+    echo " 󰚰 <span foreground='red'>$UPDATES</span> "
+else
+    # Print nothing if no updates
+    echo ""
+fi
+

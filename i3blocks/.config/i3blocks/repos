@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# List your repositories here
+repos=(
+  "$HOME/Projects/Documentation/cooking/"
+  "$HOME/Projects/Documentation/installations/"
+  "$HOME/Projects/Documentation/launchpad/"
+  "$HOME/Projects/Documentation/miniprojects/"
+  "$HOME/Projects/Documentation/presentations/"
+  "$HOME/Projects/Documentation/school/"
+  "$HOME/System/dotfiles/"
+  "$HOME/System/assets/"
+)
+
+dirty_count=0
+
+for repo in "${repos[@]}"; do
+    if [ -d "$repo/.git" ]; then
+        if [ -n "$(cd "$repo" && git status --porcelain)" ]; then
+            dirty_count=$((dirty_count + 1))
+        fi
+    else
+        # Treat non-git folders as dirty
+        dirty_count=$((dirty_count + 1))
+    fi
+done
+
+if [ $dirty_count -eq 0 ]; then
+    echo ""      # Full text
+    echo ""      # Short text
+    echo ""      # No colour
+else
+    echo "  $dirty_count "
+    echo "$dirty_count"
+    echo "#FF0000"  # Red colour for dirty repos
+fi

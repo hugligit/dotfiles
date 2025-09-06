@@ -2,11 +2,17 @@ command=~/.config/i3blocks/$BLOCK_NAME
 separator_block_width=5
 markup=none
 
+[windows]
+command=~/.config/i3blocks/windows.sh
+interval=1
+markup=pango
+align=left
 
 [cmus_status]
 align=center
 interval=1
 markup=pango
+align=right
 
 [keyboard]
 command=~/.config/i3blocks/xkblayout-state print "%s" | tr '[:lower:]' '[:upper:]'
@@ -20,6 +26,16 @@ instance=Master
 min_width=" 婢100 "
 align=left
 interval=1
+markup=pango
+
+[upgrades]
+command=~/.config/i3blocks/upgrades
+interval=3600
+markup=pango
+
+[repos]
+command= ~/.config/i3blocks/repos
+interval=30
 markup=pango
 
 [time]

@@ -2,7 +2,14 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # Inserts a blank line between shell prompts
-format = "$directory$git_branch$git_status$python$character "
+format = """
+$directory\
+$git_branch\
+$git_status\
+$python\
+$jobs\
+$character"""
+
 # format = "$directory $character"
 # format = "$directory $character $git_branch $git_commit $git_state $git_metrics $git_status"
 add_newline = false
@@ -23,6 +30,21 @@ disabled = true
 truncation_length = 3
 style = "white"
 
+[directory.substitutions]
+'Documents' = '󰈙'
+'Downloads' = ' '
+'Music' = ' '
+'Pictures' = ' '
+'bin' = '󱕷 '
+'Books' = '󰂺 '
+'Desktop' = '󰧨 '
+'Learning' = '󰑴 '
+'Projects' = ' '
+'Public' = ' '
+'System' = ' '
+'Templates' = ' '
+'Videos' = ' '
+
 [python]
 # Show Python version and virtual environment info
 # format = "$symbol$version$virtualenv "
@@ -34,3 +56,39 @@ symbol = " "
 # format = "(${name})"
 # style = "yellow"
 
+[jobs]
+symbol = ' '
+style = 'red'
+number_threshold = 1
+format = '[$symbol]($style)'
+
+[cmd_duration]
+min_time = 500
+style = 'fg:gray'
+format = '[$duration]($style)'
+
+[palettes.nord]
+dark_blue = '#5E81AC'
+blue = '#81A1C1'
+teal = '#88C0D0'
+red = '#BF616A'
+orange = '#D08770'
+green = '#A3BE8C'
+yellow = '#EBCB8B'
+purple = '#B48EAD'
+gray = '#434C5E'
+black = '#2E3440'
+white='#D8DEE9'
+
+[palettes.onedark]
+dark_blue='#61afef'
+blue='#56b6c2'
+red='#e06c75'
+green='#98c379'
+purple='#c678dd'
+cyan='#56b6c2'
+orange='#be5046'
+yellow='#e5c07b'
+gray='#828997'
+white ='#abb2bf'
+black='#2c323c'

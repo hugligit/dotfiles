@@ -11,7 +11,8 @@ Sleep & Lock\n\
 Shutdown"
 
 # Show menu and capture choice
-chosen="$(echo -e "$options" | rofi -dmenu -p "Choose:")"
+chosen="$(echo -e "$options" | rofi -dmenu -p "Choose:" -case-sensitive false)"
+# chosen="$(echo -e "$options" | rofi -dmenu -p "Choose:")"
 
 case "$chosen" in
     "Lock Screen")

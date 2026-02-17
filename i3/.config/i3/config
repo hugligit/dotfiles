@@ -108,7 +108,13 @@ bindsym $mod+semicolon exec rofi -show run
 bindsym $mod+comma exec ~/bin/blank_screen.sh
 bindsym $mod+grave exec ~/bin/rofi-menu.sh
 
+# Set a custom variable to invoke our script. Makes it easy to refer.
+set $i3screenshot sh $HOME/.config/i3/scripts/screenshot.sh
 
+bindsym Print exec --no-startup-id $i3screenshot full
+bindsym Shift+Print exec --no-startup-id $i3screenshot select
+bindsym $mod+Shift+s exec --no-startup-id maim -s | xclip -selection clipboard -t image/png
+bindsym $mod+Print exec --no-startup-id $i3screenshot window
 
 
 # bindsym $mod+a [instance="Hugli"] scratchpad show; [instance="Hugli"] move position center; [instance="Hugli"] fullscreen enable
@@ -131,7 +137,7 @@ bindsym $mod+Shift+a move scratchpad
 
 # Show the first scratchpad window
 # bindsym $mod+a scratchpad show; move position center; fullscreen enable
-bindsym $mod+a scratchpad show; move position 0 -20; resize set 2560 1460;
+bindsym $mod+a scratchpad show; move position 0 0; resize set 2560 1460;
 
 # mode "launch" 
 
@@ -231,4 +237,14 @@ bar {
 #     }
 # 
 # exec --no-startup-id xfdesktop
+
+exec_always --no-startup-id xinput set-prop "Telink Wireless PTP Receiver Touchpad" "libinput Tapping Enabled" 1
+exec_always --no-startup-id xinput set-prop "Telink Wireless PTP Receiver Touchpad" "libinput Tapping Drag Enabled" 1
+exec_always --no-startup-id xinput set-prop "Telink Wireless PTP Receiver Touchpad" "libinput Tapping Drag Lock Enabled" 0
+exec_always --no-startup-id xinput set-prop "Telink Wireless PTP Receiver Touchpad" "libinput Natural Scrolling Enabled" 1
+exec_always --no-startup-id xinput set-prop "Telink Wireless PTP Receiver Touchpad" "libinput Click Method Enabled" 0 1
+exec_always --no-startup-id xinput set-prop "Telink Wireless PTP Receiver Touchpad" "libinput Accel Profile Enabled" 1 0 0
+exec_always --no-startup-id xinput set-prop "Telink Wireless PTP Receiver Touchpad" "libinput Accel Speed" 0.1
+exec_always --no-startup-id xinput set-prop "Telink Wireless PTP Receiver Touchpad" "libinput Left Handed Enabled" 0
+exec_always --no-startup-id xinput set-prop "Telink Wireless PTP Receiver Touchpad" "libinput Disable While Typing Enabled" 1
 

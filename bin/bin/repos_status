@@ -1,7 +1,8 @@
 #!/bin/bash
 repos=(
-  "$HOME/Projects/Documentation/cooking/"
+  "$HOME/Projects/Documentation/conventions/"
   "$HOME/Projects/Documentation/installations/"
+  "$HOME/Projects/Documentation/deployment/"
   "$HOME/Projects/Documentation/launchpad/"
   "$HOME/Projects/Documentation/miniprojects/"
   "$HOME/Projects/Documentation/presentations/"

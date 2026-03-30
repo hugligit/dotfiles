@@ -3,7 +3,6 @@ repos=(
   "$HOME/Projects/Documentation/conventions/"
   "$HOME/Projects/Documentation/installations/"
   "$HOME/Projects/Documentation/deployment/"
-  "$HOME/Projects/Documentation/launchpad/"
   "$HOME/Projects/Documentation/miniprojects/"
   "$HOME/Projects/Documentation/presentations/"
   "$HOME/Projects/Documentation/school/"
